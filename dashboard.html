@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - My Education App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f4f7;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .card button {
+            padding: 10px 20px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .logout {
+            margin-top: 25px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Education App</h1>
+    <p>Student Dashboard</p>
+</header>
+
+<div class="container">
+
+    <div class="welcome">
+        <h2>Welcome, Student! 👋</h2>
+        <p>Choose what you want to study today.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>📚</h2>
+            <h3>Lessons</h3>
+            <p>View your lessons and study materials.</p>
+            <button onclick="location.href='lessons.html'">
+                View Lessons
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>📝</h2>
+            <h3>Quiz</h3>
+            <p>Test your knowledge.</p>
+            <button onclick="location.href='quiz.html'">
+                Take Quiz
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>📊</h2>
+            <h3>Progress</h3>
+            <p>Check your learning progress.</p>
+            <button onclick="alert('Progress page coming soon!')">
+                View Progress
+            </button>
+        </div>
+
+    </div>
+
+    <button class="logout" onclick="location.href='index.html'">
+        Logout
+    </button>
+
+</div>
+
+</body>
+</html>
