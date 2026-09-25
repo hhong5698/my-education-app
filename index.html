@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Education App</title>
 
     <style>
@@ -14,202 +15,115 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            color: #222;
+            background: #f2f4f7;
         }
 
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 20px;
+        .login-page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: white;
+            width: 350px;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             text-align: center;
         }
 
-        nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav button {
-            border: none;
-            background: none;
-            margin: 0 12px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
-        }
-
-        .welcome {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-        }
-
-        .lessons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .lesson {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .lesson h3 {
+        .login-box h1 {
             margin-bottom: 10px;
         }
 
-        .lesson button {
+        .login-box p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 12px;
             margin-top: 15px;
-            padding: 10px 15px;
             border: none;
-            border-radius: 6px;
+            border-radius: 7px;
             background: #2c3e50;
             color: white;
             cursor: pointer;
+            font-size: 16px;
         }
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-            color: #666;
+        .login-button:hover {
+            opacity: 0.9;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: red;
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>My Education App</h1>
-    <p>Learn • Practice • Improve</p>
-</header>
+<div class="login-page">
 
-<nav>
-    <button onclick="showHome()">Home</button>
-    <button onclick="showLessons()">Lessons</button>
-    <button onclick="showQuiz()">Quiz</button>
-</nav>
+    <div class="login-box">
 
-<div class="container" id="content">
+        <h1>My Education App</h1>
 
-    <div class="welcome">
-        <h2>Welcome!</h2>
-        <p>Welcome to my education website. Choose a lesson below to start learning.</p>
-    </div>
+        <p>Please login to continue</p>
 
-    <div class="lessons">
+        <input
+            type="text"
+            id="username"
+            placeholder="Username"
+        >
 
-        <div class="lesson">
-            <h3>Lesson 1</h3>
-            <p>Introduction to the subject.</p>
-            <button onclick="openLesson('Lesson 1')">Open Lesson</button>
-        </div>
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
 
-        <div class="lesson">
-            <h3>Lesson 2</h3>
-            <p>Learn the basic concepts.</p>
-            <button onclick="openLesson('Lesson 2')">Open Lesson</button>
-        </div>
+        <button class="login-button" onclick="login()">
+            Login
+        </button>
 
-        <div class="lesson">
-            <h3>Lesson 3</h3>
-            <p>Practice what you learned.</p>
-            <button onclick="openLesson('Lesson 3')">Open Lesson</button>
-        </div>
+        <p id="message"></p>
 
     </div>
 
 </div>
 
-<footer>
-    <p>My Education App © 2026</p>
-</footer>
-
 <script>
 
-function showHome() {
-    location.reload();
-}
+function login() {
 
-function showLessons() {
-    document.getElementById("content").innerHTML = `
-        <div class="welcome">
-            <h2>Lessons</h2>
-            <p>Select a lesson to begin.</p>
-        </div>
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-        <div class="lessons">
-            <div class="lesson">
-                <h3>Lesson 1</h3>
-                <p>Introduction to the subject.</p>
-                <button onclick="openLesson('Lesson 1')">Open Lesson</button>
-            </div>
+    if (username === "student" && password === "1234") {
 
-            <div class="lesson">
-                <h3>Lesson 2</h3>
-                <p>Basic concepts.</p>
-                <button onclick="openLesson('Lesson 2')">Open Lesson</button>
-            </div>
+        window.location.href = "dashboard.html";
 
-            <div class="lesson">
-                <h3>Lesson 3</h3>
-                <p>Practice lesson.</p>
-                <button onclick="openLesson('Lesson 3')">Open Lesson</button>
-            </div>
-        </div>
-    `;
-}
-
-function openLesson(lesson) {
-    document.getElementById("content").innerHTML = `
-        <div class="welcome">
-            <h2>${lesson}</h2>
-            <br>
-            <p>This is where your lesson content will go.</p>
-            <br>
-            <p>You can add text, images, videos, examples and exercises here.</p>
-            <br>
-            <button onclick="showLessons()">← Back to Lessons</button>
-        </div>
-    `;
-}
-
-function showQuiz() {
-    document.getElementById("content").innerHTML = `
-        <div class="welcome">
-            <h2>Quiz</h2>
-            <br>
-
-            <p><b>Question 1:</b> What is 2 + 2?</p>
-            <br>
-
-            <button onclick="checkAnswer(4)">4</button>
-            <button onclick="checkAnswer(5)">5</button>
-            <button onclick="checkAnswer(6)">6</button>
-
-            <p id="result"></p>
-        </div>
-    `;
-}
-
-function checkAnswer(answer) {
-    if (answer === 4) {
-        document.getElementById("result").innerHTML = "Correct! 🎉";
     } else {
-        document.getElementById("result").innerHTML = "Try again.";
+
+        document.getElementById("message").innerText =
+            "Incorrect username or password.";
+
     }
+
 }
 
 </script>
