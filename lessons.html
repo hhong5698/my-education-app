@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lessons - My Education App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f4f7;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .lesson h2 {
+            margin-top: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .back {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Lessons</h1>
+    <p>Choose a lesson to start learning</p>
+</header>
+
+<div class="container">
+
+    <div class="lesson">
+        <h2>Lesson 1: Introduction</h2>
+        <p>Learn the basic introduction to the subject.</p>
+
+        <button onclick="openLesson(1)">
+            Open Lesson
+        </button>
+    </div>
+
+    <div class="lesson">
+        <h2>Lesson 2: Basic Concepts</h2>
+        <p>Learn the important concepts and definitions.</p>
+
+        <button onclick="openLesson(2)">
+            Open Lesson
+        </button>
+    </div>
+
+    <div class="lesson">
+        <h2>Lesson 3: Practice</h2>
+        <p>Practice what you have learned.</p>
+
+        <button onclick="openLesson(3)">
+            Open Lesson
+        </button>
+    </div>
+
+    <button class="back" onclick="location.href='dashboard.html'">
+        ← Back to Dashboard
+    </button>
+
+</div>
+
+<script>
+
+function openLesson(number) {
+
+    if (number === 1) {
+        alert("Lesson 1: Introduction\n\nThis is where you can add your lesson content.");
+    }
+
+    if (number === 2) {
+        alert("Lesson 2: Basic Concepts\n\nThis is where you can add your lesson content.");
+    }
+
+    if (number === 3) {
+        alert("Lesson 3: Practice\n\nThis is where you can add your lesson content.");
+    }
+
+}
+
+</script>
+
+</body>
+</html>
